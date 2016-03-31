@@ -12,6 +12,10 @@ public DataBaseHome(){
 }
 
 public User login(String username, String password){
+	if(username.equals(""))
+		return new IllegalArgumentException();
+	else if(password.equals(""))
+		return new IllegalArgumentException();
   String[][] users = dummydatabase.user_getUsers();
     for(int i=0; i< users.length ; i++){
       //System.out.println(users[i][2] + " " + users[i][3]);
@@ -22,6 +26,19 @@ public User login(String username, String password){
 }
 
 public User addUser(String firstname, String lastname, String username, String password, char type){
+	if(type != 'a' || type != 's')
+		throw new IllegalArgumentException("type is not a or s");
+	else if(firstname.equals(""))
+		throw new IllegalArgumentException("empty argument");
+	else if(lastname.equals(""))
+		throw new IllegalArgumentException("empty argument");
+	else if(username.equals(""))
+		throw new IllegalArgumentException("empty argument");
+	else if(password.equals(""))
+		throw new IllegalArgumentException("empty argument");
+	else if(type == '')
+		throw new IllegalArgumentException("empty argument");
+	
   dummydatabase.user_addUser(firstname,lastname,username,password, type);
   return new User(firstname,lastname,username,password, type,'a');
 }
@@ -36,6 +53,19 @@ public User addUser(String firstname, String lastname, String username, String p
     }
     
     public User editUser(int id,String firstname, String lastname, String username, String password, char type,char status){
+    	if(type != 'a' || type != 's')
+    		throw new IllegalArgumentException("type is not a or s");
+    	else if(firstname.equals(""))
+    		throw new IllegalArgumentException("empty argument");
+    	else if(lastname.equals(""))
+    		throw new IllegalArgumentException("empty argument");
+    	else if(username.equals(""))
+    		throw new IllegalArgumentException("empty argument");
+    	else if(password.equals(""))
+    		throw new IllegalArgumentException("empty argument");
+    	else if(type == '')
+    		throw new IllegalArgumentException("empty argument");
+    	
       dummydatabase.user_editUser(firstname,lastname,username,password, type,status);
       return new User(firstname,lastname,username,password,type,status);
     }
