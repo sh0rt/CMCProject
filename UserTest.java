@@ -18,7 +18,7 @@ public class UserTest {
 	}
 
 	@Test
-	public void testGetName() {
+	public void testGetFirstName() {
 		Assert.assertTrue("First name of user1 is Conor", user1.getFirstName().equals("Conor"));
 		Assert.assertTrue("First name of user2 is TheOther", user2.getFirstName().equals("TheOther"));
 		Assert.assertTrue("First name of user3 is Jeff", user3.getFirstName().equals("Jeff"));
