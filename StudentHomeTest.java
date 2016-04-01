@@ -5,7 +5,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class StudentHomeTest {
-
+	
+	School sju = new School("SJU");
 	User u;
 	DatabaseHome database;
 
@@ -30,24 +31,23 @@ public class StudentHomeTest {
 
 	@Test
 	public void testGetSavedSchools() {
-		sh.addSchool("SJU");
-		Assert.assertTrue("u saved schools is SJU", sh.getSavedSchools().equals("SJU"));
+		sh.addSchool(sju);
+		Assert.assertTrue("u saved schools is SJU", sh.getSavedSchools().equals(sju));
 	}
 
 	@Test
 	public void testRemoveSchool() {
-		//???
+		Assert.assertTrue("sh removes school sju", sh.removeSchool(sju));
 	}
 
 	@Test
 	public void testAddSchool() {
-		sh.addSchool("SJU");
-		//???
+		Assert.assertTrue("u add school is true", sh.addSchool(sju).equals(true));
 	}
 
 	@Test
 	public void testSearch() {
-		//???
+		Assert.assertTrue("Search yields sju", sh.search("Adelphi").equals(ADELPHI));
 	}
 
 	@Test

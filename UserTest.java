@@ -94,10 +94,10 @@ public class UserTest {
 
 	@Test
 	public void testSetSchools() {} //???
-	
+
 	@Test
 	public void testLogout() {} //???
-	
+
 	@Test
 	public void testManageSchools() {} //???
 

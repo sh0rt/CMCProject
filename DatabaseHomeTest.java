@@ -7,7 +7,7 @@ public class DatabaseHomeTest {
 	DataBaseHome database;
 	User user1, user2, user3;
 	School school1, school2, school3;
-	
+
 	@Before
 	public void setUp() throws Exception {
 		database = new DataBaseHome();
@@ -21,7 +21,7 @@ public class DatabaseHomeTest {
 		database.addUser(user3.getFirstName(), user3.getLastName(), user3.getUsername(), 
 				user3.getPassword(), user3.getType());
 	}
-//----------------------------------------------------Login----------------------------------------------------------
+	//----------------------------------------------------Login----------------------------------------------------------
 	@Test
 	public void testLoginSuccess() {
 		assertTrue("Login returned the incorrect user.",database.login("tnweiss", "weiss").equals(user1));
@@ -42,7 +42,7 @@ public class DatabaseHomeTest {
 	public void testEmptyLoginPassword() {
 		database.login("tweiss", "");
 	}
-//---------------------------------------------------addUser----------------------------------------------------------
+	//---------------------------------------------------addUser----------------------------------------------------------
 	@Test
 	public void testAddUser() {
 		user1.setFirstName("t");
@@ -127,6 +127,6 @@ public class DatabaseHomeTest {
 		database.editUser(user1.getFirstName(), user1.getLastName(), user1.getUsername(),user1.getPassword(), '');
 	}
 	//----------------------------------------------deactivate user---------------------------------------------------
-	
-	
+
+
 }

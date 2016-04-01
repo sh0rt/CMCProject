@@ -6,7 +6,7 @@ import org.junit.Test;
 public class UserHomeTest {
 
 	DataBaseHome db;
-	
+
 	@Before
 	public void setUp() throws Exception {
 		UserHome uh = new UserHome(db);
