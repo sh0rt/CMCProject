@@ -47,22 +47,22 @@ public class StudentHomeTest {
 
 	@Test
 	public void testSearch() {
-		Assert.assertTrue("Search yields sju", sh.search("Adelphi").equals(ADELPHI));
+		Assert.assertTrue("Search yields Adelphi", sh.search("Adelphi").equals(ADELPHI));
 	}
 
 	@Test
 	public void testGetRecommend() {
-		//???
+		Assert.assertTrue("getRecommend gets the recommended schools", sh.getRecommend().equals(recommend));
 	}
 
 	@Test
 	public void testGetSearch() {
-		//???
+		Assert.assertTrue("Get search returns top 5 results.", sh.getSearch().equals(top5));
 	}
 
 	@Test
 	public void testGetSearchID() {
-		//???
+		Assert.assertTrue("Get search ID is -1", sh.getSearchID(5).equals(4));
 	}
 
 }
