@@ -1,11 +1,13 @@
 import static org.junit.*;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 public class UserTest {
 
 	User user1, user2, user3;
+	School sju;
 	ArrayList<School> schools = new ArrayList<School>(null);
 
 	@Before
@@ -90,16 +92,14 @@ public class UserTest {
 	}
 
 	@Test
-	public void testGetSchools() {} //???
-
+	public void testSetSchools() {
+		Assert.assertTrue("School added to schools.", user1.setSchools(sju));
+	}
+	
 	@Test
-	public void testSetSchools() {} //???
-
-	@Test
-	public void testLogout() {} //???
-
-	@Test
-	public void testManageSchools() {} //???
+	public void testGetSchools() {
+		Assert.assertTrue("Get School returns sju.", user1.getSchools(0).equals(sju));
+	}
 
 	@Test
 	public void testGetID() {
