@@ -147,4 +147,6 @@ public class SchoolTest {
 		school1.setQualOfLife(1);
 		assertTrue("setQualOfLifeScale not working", school1.getQualOfLife().equals(1));
 	}
+	//---------------------------------------------Test Failures------------------------------------------------
+	
 }
