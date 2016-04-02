@@ -226,22 +226,11 @@ public class User {
 	 * @param schools
 	 *            the schools to set
 	 */
-	public void setSchools(ArrayList<School> schools) {
-		this.schools = schools;
-	}
-
-	/**
-	 * logs user out
-	 */
-	public void logout() {
-
-	}
-
-	/**
-	 * manages schools
-	 */
-	public void manageSchools() {
-
+	public boolean setSchools(ArrayList<School> schools) {
+		if(this.schools = schools)
+			return true;
+		else
+			return false;
 	}
 
 	/**

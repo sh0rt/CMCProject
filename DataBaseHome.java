@@ -132,6 +132,8 @@ public User addUser(String firstname, String lastname, String username, String p
 				percentFemale, expenses, percentFinAid, percentAdmitted, percentEnrolled, academicScale, socialScale,
 				qualOflife, emphasis);
   }
-    
+    public void removeSchool(String name){
+    	dummydatabase.university_deleteUniversity(name);
+    }
 }
 
