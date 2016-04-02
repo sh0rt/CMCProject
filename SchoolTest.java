@@ -72,5 +72,8 @@ public class SchoolTest {
 		assertTrue("getQualOfLifeScale not working", school1.getQualOfLife().equals(5));
 	}
 	//----------------------------------------------------------test setters---------------------------------------------------
-	
+	@test
+	public void getQualOfLifeScale() {
+		assertTrue("getQualOfLifeScale not working", school1.getQualOfLife().equals(5));
+	}
 }

@@ -24,7 +24,13 @@ public class SearchHome {
 		recommend = new School[5];
 		this.database = database;
 	}
-
+	public SearchHome() {
+		super();
+		top10 = new int[10];
+		top5 = new School[5];
+		recommend = new School[5];
+		this.database = new DataBaseHome();
+	}
 	/**
 	 * Searches school by parameters
 	 * 
