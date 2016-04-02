@@ -71,9 +71,80 @@ public class SchoolTest {
 	public void getQualOfLifeScale() {
 		assertTrue("getQualOfLifeScale not working", school1.getQualOfLife().equals(5));
 	}
-	//----------------------------------------------------------test setters---------------------------------------------------
-	@test
-	public void getQualOfLifeScale() {
-		assertTrue("getQualOfLifeScale not working", school1.getQualOfLife().equals(5));
+	//----------------------------------------------------------test setters------------------------------- ADD IN SETTERS TO ONES BELOW!!!!
+	@Test
+	public void setState() {
+		school1.setState("test");
+		assertTrue("setState not working", school1.getState().equals("test"));
+	}
+	@Test
+	public void setLocation() {
+		school1.setLocation("test");
+		assertTrue("setLocation not working", school1.getLocation().equals("test"));
+	}
+	@Test
+	public void setControl() {
+		school1.setControl("test");
+		assertTrue("setControl not working", school1.getControl().equals("test"));
+	}
+	@Test
+	public void setNumberOfStudents() {
+		school1.setnumStudents(1000);
+		assertTrue("setNumberOfStudents not working", school1.getnumStudents().equals(1000));
+	}
+	@Test
+	public void setPercentFemales() {
+		school1.setPercentFemales(20.0);
+		assertTrue("setPercentFemales not working", school1.getPercentFemales().equals(20.0));
+	}
+	@Test
+	public void setSATVerbal() {
+		school1.setSatVerbal(300.0);
+		assertTrue("setSatVerbal not working", school1.getSatVerbal().equals(300.0));
+	}
+	@Test
+	public void setSatMath() {
+		school1.setSatMath(300.0);
+		assertTrue("setSatMath not working", school1.getSatMath().equals(300.0));
+	}
+	@Test
+	public void setExpenses() {
+		school1.setExpenses(1000.0);
+		assertTrue("setSatMath not working", school1.getExpenses().equals(1000.0));
+	}
+	@Test
+	public void setPercentFinancialAid() {
+		school1.setPercentFinAid(10.0);
+		assertTrue("setPercentFinancialAid not working", school1.getPercentFinAid().equals(10.0));
+	}
+	@Test
+	public void setNumberOfAplicants() {
+		school1.setNumApplicants(1);
+		assertTrue("setNumberOfApplicants not working", school1.getNumApplicants().equals(1)));
+	}
+	@Test
+	public void setPercentAdmitted() {
+		school1.setPercentAdmitted(.3);
+		assertTrue("setPercentAdmitted not working", school1.getPercentAdmitted().equals(.3));
+	}
+	@Test
+	public void setPercentEnrolled() {
+		school1.setPercentEnrolled(.4);
+		assertTrue("setPercentFinancialAid not working", school1.getPercentEnrolled().equals(.4));
+	}
+	@Test
+	public void setAcademicScale() {
+		school1.setAcademicScale(2);
+		assertTrue("setAcademicScale not working", school1.getAcademicScale().equals(2));
+	}
+	@Test
+	public void setSocialScale() {
+		school1.setSocialScale(2);
+		assertTrue("setSocialScale not working", school1.getSocialScale().equals(2));
+	}
+	@Test
+	public void setQualOfLifeScale() {
+		school1.setQualOfLife(1);
+		assertTrue("setQualOfLifeScale not working", school1.getQualOfLife().equals(1));
 	}
 }
