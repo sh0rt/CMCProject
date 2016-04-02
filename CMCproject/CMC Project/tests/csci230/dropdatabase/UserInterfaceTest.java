@@ -11,36 +11,35 @@ import org.junit.Test;
 
 public class UserInterfaceTest {
 	UserInterface user;
-	String username, password;
-	
+	User user2;
+	UserHome home;
 	@Before
 	public void setUp() throws Exception {
 		user = new UserInterface();
+	//ImadUser edited, 
+		home = new UserHome();
+		user2 = home.login("ImadUser", "Edited");
 	}
-
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
-
+//-----------------------------------------------------------------login--------------------------------------------------------------------------------------------------------------------------
 	@Test
-	public void testUserInterface() {
-		fail("Not yet implemented");
+	public void testLoginSuccess() {
+		assertTrue("Login returned the incorrect user.",user.login("ImadUser", "Edited").equals(user2));
 	}
-
 	@Test
-	public void testLogin() {
-		String validUser = juser;
-		String validPass = user;
-		String expResult = user.login(validUser,user);
-		fail("Not yet implemented");
+	public void testIncorrectLoginUsername() {
+		assertTrue("Login returned a user that is was not supposed to (incorrect username).",user.login("Megan", "Edited").equals(null));
+	}
+	@Test
+	public void testIncorrectLoginPassword() {
+		assertTrue("Login returned a user that is was not supposed to (incorrect password).",user.login("ImadUser", "CMC").equals(null));
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void testEmptyLoginUsername() {
+		user.login("", "Megan1");
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void testEmptyLoginPassword() {
+		user.login("Compsci", "");
 	}
 
 }
