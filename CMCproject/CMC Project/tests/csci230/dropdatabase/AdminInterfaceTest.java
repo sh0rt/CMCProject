@@ -1,6 +1,7 @@
 package csci230.dropdatabase;
 
 import static org.junit.Assert.*;
+import java.util.ArrayList;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -9,21 +10,16 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class AdminInterfaceTest {
+	AdminInterface admin;
+	User user;
+	DataBaseHome data1;
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
 
 	@Before
 	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
+		admin = new AdminInterface();
+		data1 = new DataBaseHome();
+		
 	}
 
 	@Test
@@ -33,7 +29,11 @@ public class AdminInterfaceTest {
 
 	@Test
 	public void testViewSchools() {
-		fail("Not yet implemented");
+		ArrayList<School> schools = data1.getSchools();
+		String temp = admin.viewSchools();
+		for(int i = 0; i < schools.size(); i++) {
+			assertTrue("View Schools is not working in AdminInterface", temp.contains(schools.get(i).getSchool()));
+		}
 	}
 
 	@Test
@@ -47,8 +47,20 @@ public class AdminInterfaceTest {
 	}
 
 	@Test
-	public void testViewSchool() {
-		fail("Not yet implemented");
+	public void testViewSchoolWithValidID() {
+		School school = admin.getSchools().get(ID);
+		String temp = admin.viewSchool();
+		assertTrue("Valid ID school is not working in viewSchool()", temp.contains(school.getName()&&school.getState()&&school.getControl()&&school.getEmphasis()
+				&&school.getExpenses()&&school.getLocation()&&school.getNumApplicants()&&school.getNumStudents()&&school.getPercentAdmitted()&&school.getAcademicScale()
+				&&school.getPercentEnrolled()&&school.getPercentFemale()&&school.getPercentFinAid()&&school.getQualOfLife()&&school.getSatMath()&&school.getSatVerbal()
+				&&school.getSocialscale()));
+	}
+	
+	@Test
+	public void testViewSchoolWithInvalidID() {
+		School school = admin.getSchools().get(ID);
+		String temp =  admin.viewSchool(ID);
+		assertTrue("Invalid ID school is not working in viewSchool()", temp.contains())
 	}
 
 	@Test
