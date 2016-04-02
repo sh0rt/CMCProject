@@ -16,6 +16,21 @@ public class UserTest {
 		user2 = new User("TheOther", "C-Lo", "another", "one", 'U', 'n');
 		user3 = new User("Jeff", "Bullhorn", "blankyboy", "password", 'A', 'y');
 	}
+	
+	@Test
+	public void testGetUsername() {
+		Assert.assertTrue("Get username for user1 is not working", user1.getUsername().equals("clorsung"));
+		Assert.assertTrue("Get username for user2 is not working", user2.getUsername().equals("another"));
+		Assert.assertTrue("Get username for user3 is not working", user3.getUsername().equals("blankyboy"));	
+	}
+	
+	@Test
+	public void testSetUsername() {
+		Assert.assertTrue("Username of user1 is not working", user1.getUsername().equals('clorsung'));
+		user1.setUsername('Megan');
+		Assert.assertTrue("Username of user1 is not working after new set", user1.getUsername().equals('Megan'));
+		user1.setType('clorsung');
+	}
 
 	@Test
 	public void testGetFirstName() {
