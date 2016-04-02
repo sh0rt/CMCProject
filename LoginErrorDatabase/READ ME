@@ -1,0 +1,1 @@
+The two files in this folder use the sql database class, but we were not able to successfully login when running the program on any machine. The .java files compile just fine without errors, but we made a dummy database class that returns the same exact things as the universitydb class.
