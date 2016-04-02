@@ -71,7 +71,11 @@ public User addUser(String firstname, String lastname, String username, String p
     }
     
     public User deactivateUser(int id){
+      if(id < 0)
+    	  throw new IllegalArgumentException("id can not be less than 0");
       String[][] temp = dummydatabase.user_getUsers();
+      if(id> temp.length)
+    	  throw new IllegalArgumentException("id to large");
       dummydatabase.user_editUser(temp[id][2],temp[id][0],temp[id][1],temp[id][3],temp[id][4].charAt(0),'d');
                   return new User(temp[id][0],temp[id][1],temp[id][2],temp[id][3],temp[id][4].charAt(0),'d');
     }
@@ -114,7 +118,20 @@ public User addUser(String firstname, String lastname, String username, String p
                         percentFemale,expenses,percentFinAid,percentAdmitted,percentEnrolled,
                         academicScale,socialScale,qualOflife,emphasis);
     }
-  
+    
+  public School addSchool(String school, String state, String location, String control, int numStudents,
+			double percentFemale, int satVerbal, int satMath, double expenses, double percentFinAid, int numApplicants,
+			double percentAdmitted, double percentEnrolled, int academicScale, int socialScale, int qualOflife,
+			String[] emphasis){
+	  
+	  dummydatabase.university_addUniversity(school, state, location, control, numStudents, satVerbal, satMath, numApplicants,
+				percentFemale, expenses, percentFinAid, percentAdmitted, percentEnrolled, academicScale, socialScale,
+				qualOflife, emphasis);
+	  
+	  return new School(school, state, location, control, numStudents, satVerbal, satMath, numApplicants,
+				percentFemale, expenses, percentFinAid, percentAdmitted, percentEnrolled, academicScale, socialScale,
+				qualOflife, emphasis);
+  }
     
 }
 

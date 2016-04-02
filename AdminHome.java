@@ -106,6 +106,9 @@ public class AdminHome {
 		School temp = new School(school, state, location, control, numStudents, satVerbal, satMath, numApplicants,
 				percentFemale, expenses, percentFinAid, percentAdmitted, percentEnrolled, academicScale, socialScale,
 				qualOflife, emphasis);
+		database.addSchool(school, state, location, control, numStudents, satVerbal, satMath, numApplicants,
+				percentFemale, expenses, percentFinAid, percentAdmitted, percentEnrolled, academicScale, socialScale,
+				qualOflife, emphasis);
 		schools.add(temp);
 		return temp;
 	}

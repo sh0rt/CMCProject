@@ -1,5 +1,5 @@
 import static org.junit.Assert.*;
-
+import java.util.*;
 import org.junit.Before;
 import org.junit.Test;
 import de
@@ -14,12 +14,17 @@ public class DatabaseHomeTest {
 		user1 = new User("Tyler", "Weiss", "tnweiss", "weiss", 'a');
 		user2 = new User("T-$", "Weiss", "ball", "isLife", 'a');
 		user3 = new User("T-Buckets", "Weiss", "get", "money", 'a');
+		/*
 		database.addUser(user1.getFirstName(), user1.getLastName(), user1.getUsername(), 
 				user1.getPassword(), user1.getType());
 		database.addUser(user2.getFirstName(), user2.getLastName(), user2.getUsername(), 
 				user2.getPassword(), user2.getType());
 		database.addUser(user3.getFirstName(), user3.getLastName(), user3.getUsername(), 
 				user3.getPassword(), user3.getType());
+				*/
+		school1 = new School("Saint Johns University","Minnesota", "SMALL-CITY", "PRIVATE", 5000, .5, 20,30,5000.0,.3,1000,.5,.3,4,3,5);
+		school2 = new School("University of Minnesota Duluth","Minnesota", "UNKNOWN", "STATE", 50000, .7, 20,30,5000.0,.3,1000,.5,.3,4,3,5);
+		school3 = new School(("University of Minnesota","Minnesota", "URBAN", "UNKNOWN", 500000, .45, 20,30,5000.0,.3,1000,.5,.3,4,3,5));
 	}
 //----------------------------------------------------Login----------------------------------------------------------
 	@Test
@@ -127,6 +132,36 @@ public class DatabaseHomeTest {
 		database.editUser(user1.getFirstName(), user1.getLastName(), user1.getUsername(),user1.getPassword(), '');
 	}
 	//----------------------------------------------deactivate user---------------------------------------------------
-	
-	
+	@Test
+	public void testDeactivateUser() {
+		user2.setStatus('d');
+		assertTrue("Deactivation error.", database.deactivateUser(0).equals(user2));
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void testDeactivateUserFailsForNegativeInteger() {
+		database.deactivateUser(-1);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void testDeactivateUserFailsForIntegerOutOfRange() {
+		database.deactivateUser(7);
+	}
+    //----------------------------------------------addSchool--------------------------------------------------------
+	@Test
+	public void testAddSchool(){
+		assetTrue("add school failed",database.addSchool(s.getSchool(),school1.getState(state),school1.getLocation(location),
+		school1.getControl(control),school1.getNumStudents(numberOfStudents),school1.getPercentFemale(percentFemales),
+	    school1.getSatVerbal(SATVerbal),school1.getSatMath(SATMath),school1.getExpenses(expenses),
+		school1.getPercentFinAid(percentFinancialAid),school1.getNumApplicants(numberOfApplicants),school1.getPercentAdmitted(percentAdmitted),
+		school1.getPercentEnrolled(percentEnrolled),school1.getAcademicScale(academicsScale),school1.getSocialscale(socialScale),
+		school1.getQualOfLife(qualityOfLifeScale)).equals(school1));
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void testAddSchoolWithEmpty{
+		database.addSchool(s.getSchool(),school1.getState(state),school1.getLocation(location),
+				school1.getControl(control),school1.getNumStudents(numberOfStudents),school1.getPercentFemale(percentFemales),
+			    school1.getSatVerbal(SATVerbal),school1.getSatMath(SATMath),school1.getExpenses(expenses),
+				school1.getPercentFinAid(percentFinancialAid),school1.getNumApplicants(numberOfApplicants),school1.getPercentAdmitted(percentAdmitted),
+				school1.getPercentEnrolled(percentEnrolled),school1.getAcademicScale(academicsScale),school1.getSocialscale(socialScale),
+				school1.getQualOfLife(qualityOfLifeScale));
+	}
 }
