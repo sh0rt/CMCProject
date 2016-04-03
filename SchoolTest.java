@@ -148,5 +148,104 @@ public class SchoolTest {
 		assertTrue("setQualOfLifeScale not working", school1.getQualOfLife().equals(1));
 	}
 	//---------------------------------------------Test Failures------------------------------------------------
-	
+	@Test(expected = IllegalArgumentException.class)
+	public void setEmptyName(){
+		school1.setSchool("");
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setEmptyState(){
+		school1.setState("");
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setEmptyLocation(){
+		school1.setLocation("");
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setEmptyControl(){
+		school1.setControl("");
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setNegativeNumStudents(){
+		school1.setNumStudents(-1);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setNegativeSatVerbal(){
+		school1.setSatVerbal(-1);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setOverSatVerbal(){
+		school1.setSatVerbal(801);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setNegativeSatMath(){
+		school1.setState(-1);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setOverSatMath(){
+		school1.setSatMath(801);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setNegativeNumApplicants(){
+		school1.setNumApplicants(-1);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setNegativePercentFemale(){
+		school1.setPercentFemale(-1);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setOverPercentFemale(){
+		school1.setPercentFemale(801);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setNegativeExpenses(){
+		school1.setExpenses(-1);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setNegativePercentFinAid(){
+		school1.setPercentFinAid(-1);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setOverPercentFinAid(){
+		school1.setPercentFinAid(801);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setNegativePercentAdmitted(){
+		school1.setPercentAdmitted(-1);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setOverPercentAdmitted(){
+		school1.setPercentAdmitted(801);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setNegativePercentEnrolled(){
+		school1.setPercentEnrolled(-1);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setOverPercentEnrolled(){
+		school1.setPercentEnrolled(801);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setUnderAcademicScale(){
+		school1.setPercentFemale(0);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setOverAcademicScale(){
+		school1.setPercentFemale(6);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setUnderSocialScale(){
+		school1.setSocialScale(0);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setOverSocialScale(){
+		school1.setSocialScale(6);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setUnderQualOfLife(){
+		school1.setQualOfLife(0);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void setOverQualOfLife(){
+		school1.setQualOfLife(6);
+	}
 }

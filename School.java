@@ -124,6 +124,8 @@ public class School {
 	 *            the state to set
 	 */
 	public void setState(String state) {
+		if(state.equals(""))
+			throw new IllegalArgumentException();
 		this.state = state;
 	}
 
@@ -143,6 +145,8 @@ public class School {
 	 *            the location to set
 	 */
 	public void setLocation(String location) {
+		if(location.equals(""))
+			throw new IllegalArgumentException();
 		this.location = location;
 	}
 
@@ -162,6 +166,8 @@ public class School {
 	 *            the control to set
 	 */
 	public void setControl(String control) {
+		if(control.equals(""))
+			throw new IllegalArgumentException();
 		this.control = control;
 	}
 
@@ -181,6 +187,8 @@ public class School {
 	 *            the numStudents to set
 	 */
 	public void setNumStudents(int numStudents) {
+		if(numStudents < 0)
+			throw new IllegalArgumentException();
 		this.numStudents = numStudents;
 	}
 
@@ -200,6 +208,8 @@ public class School {
 	 *            the satVerbal to set
 	 */
 	public void setSatVerbal(double satVerbal) {
+		if(satVerbal < 0 || satVerbal > 800)
+			throw new IllegalArgumentException();
 		this.satVerbal = satVerbal;
 	}
 
@@ -219,6 +229,8 @@ public class School {
 	 *            the satMath to set
 	 */
 	public void setSatMath(double satMath) {
+		if(satMath < 0 || satMath > 800)
+			throw new IllegalArgumentException();
 		this.satMath = satMath;
 	}
 
@@ -238,6 +250,8 @@ public class School {
 	 *            the numApplicants to set
 	 */
 	public void setNumApplicants(int numApplicants) {
+		if(numApplicants < 0 )
+			throw new IllegalArgumentException();
 		this.numApplicants = numApplicants;
 	}
 
@@ -257,6 +271,8 @@ public class School {
 	 *            the percentFemale to set
 	 */
 	public void setPercentFemale(double percentFemale) {
+		if(percentFemale < 0 || percentFemale > 100)
+			throw new IllegalArgumentException();
 		this.percentFemale = percentFemale;
 	}
 
@@ -276,6 +292,8 @@ public class School {
 	 *            the expenses to set
 	 */
 	public void setExpenses(double expenses) {
+		if(expenses < 0 )
+			throw new IllegalArgumentException();
 		this.expenses = expenses;
 	}
 
@@ -295,6 +313,8 @@ public class School {
 	 *            the percentFinAid to set
 	 */
 	public void setPercentFinAid(double percentFinAid) {
+		if(percentFinAid < 0 || percentFinAid > 100)
+			throw new IllegalArgumentException();
 		this.percentFinAid = percentFinAid;
 	}
 
@@ -314,6 +334,8 @@ public class School {
 	 *            the percentAdmitted to set
 	 */
 	public void setPercentAdmitted(double percentAdmitted) {
+		if(percentAdmitted < 0 || percentAdmitted > 100)
+			throw new IllegalArgumentException();
 		this.percentAdmitted = percentAdmitted;
 	}
 
@@ -333,6 +355,8 @@ public class School {
 	 *            the percentEnrolled to set
 	 */
 	public void setPercentEnrolled(double percentEnrolled) {
+		if(percentEnrolled < 0 || percentEnrolled > 100)
+			throw new IllegalArgumentException();
 		this.percentEnrolled = percentEnrolled;
 	}
 
@@ -352,6 +376,8 @@ public class School {
 	 *            the academicScale to set
 	 */
 	public void setAcademicScale(int academicScale) {
+		if(academicScale < 1 || academicScale > 5)
+			throw new IllegalArgumentException();
 		this.academicScale = academicScale;
 	}
 
@@ -371,6 +397,8 @@ public class School {
 	 *            the socialscale to set
 	 */
 	public void setSocialscale(int socialscale) {
+		if(socialScale < 1 || socialScale > 5)
+			throw new IllegalArgumentException();
 		this.socialscale = socialscale;
 	}
 
@@ -390,6 +418,8 @@ public class School {
 	 *            the qualOfLife to set
 	 */
 	public void setQualOfLife(int qualOfLife) {
+		if(qualOfLife < 1 || qualOfLife > 5)
+			throw new IllegalArgumentException();
 		this.qualOfLife = qualOfLife;
 	}
 
@@ -470,18 +500,18 @@ public class School {
 	 * 
 	 * @param name
 	 *            name of the school
-	 */
 	public void setName(String name) {
+		
 		this.name = name;
 	}
-
-	/**
 	 * sets the school with the name
 	 * 
 	 * @param name
 	 *            is name of school
 	 */
 	public void setSchool(String name) {
+		if(name.equals(""))
+			throw new IllegalArgumentException();
 		this.name = name;
 	}
 
